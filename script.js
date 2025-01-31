@@ -1,20 +1,56 @@
 $(() => {
-
   const API_TRANSPORT = "https://transport.integration.sl.se/v1";
   const API_DEVIATIONS = "https://deviations.integration.sl.se/v1";
 
-  async function fetchTrainData() {
-    try {
-      const response = await fetch(`${endpoint}/rockets`);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
+  let transport = null;
 
-      const data = await response.json();
-      console.log("Train Data:", data);
-    } catch (error) {
-      console.error("Failed to fetch train data:", error);
+  const fetchData = async (route) => {
+    const response = await fetch(route);
+    if (!response.ok)
+      throw new Error(`‼️ Failed to fetch ${route}: ${response.status}`);
+    return response.json();
+  };
+
+  // const displayTransport = async () => {
+  //   try {
+  //     transport = await fetchData(API_TRANSPORT);
+  //     // displaying DOM
+  //   } catch (error) {
+  //     console.log("Error fetching transport:", error.message);
+  //     // DOM: failed to load trains
+  //   }
+  // };
+
+  // const displayDeviations = async () => {
+  //   try {
+  //     const deviations = await fetchData(API_DEVIATIONS);
+  //   } catch (error) {
+  //     console.log("Error fetching deviations:", error.message);
+  //   }
+  // };
+
+  const displayDepartures = async () => {
+    const stationInput = $("#stationInput").value.trim();
+    const resultDiv = $("#result");
+    resultDiv.innerText = "";
+
+    if (!stationInput) {
+      resultDiv.html("<p class='error'>Please enter a station name.</p>");
+      return;
     }
-  }
-  fetchTrainData();
+
+    try {
+      const departures = await fetchData(
+        `${API_TRANSPORT}/sites/${siteId}/departures`
+      );
+    } catch (error) {
+      console.log("Error fetching departures:", error.message);
+    }
+  };
+
+  $("#searchButton").on("click", displayDepartures);
+
+  displayTransport();
+  displayDeviations();
+  displayDepartures();
 });
