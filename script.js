@@ -32,10 +32,17 @@ $(() => {
   const displayDepartures = async () => {
     const stationInput = $("#stationInput").value.trim();
     const resultDiv = $("#result");
-    resultDiv.innerText = "";
+    resultDiv.html();
 
     if (!stationInput) {
-      resultDiv.html("<p class='error'>Please enter a station name.</p>");
+      resultDiv.html(`<p class='error'>Please enter a station name.</p>`);
+      return;
+    }
+
+    if (!transport) {
+      resultDiv.html(
+        "<p class='error'>Transport data not loaded. Please try again later.</p>"
+      );
       return;
     }
 
