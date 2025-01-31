@@ -1,17 +1,25 @@
 $(() => {
-  const API_TRANSPORT =
-    "https://transport.integration.sl.se/v1/sites/9117/departures";
-
+  const API_DEPARTURES = "https://transport.integration.sl.se/v1/sites";
   const showTransport = async () => {
     try {
-      let response = await fetch(API_TRANSPORT);
-      let transport = await response.json();
+      let randomID = Math.floor(Math.random() * 9999);
+      console.log("randomID", randomID);
+      let departuresRes = await fetch(
+        `${API_DEPARTURES}/${9117}/departures`
+      );
+      let departure = await departuresRes.json();
+      console.log("Number of departures:", departure.departures.length);
+      const sliceArray = departure.departures.slice(0,departure.departures.length)
+      console.log(sliceArray)
+      const map = sliceArray.map((station) =>{
+        return station.destination
+      })
+      console.log(map)
 
-      let metro = transport.departures[0].destination;
-      console.log(metro);
     } catch (error) {
       console.log(error);
     }
   };
+
   showTransport();
 });
