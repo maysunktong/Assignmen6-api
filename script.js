@@ -22,14 +22,26 @@ $(() => {
           console.log("Departures found for station ID:", randomId);
         }
       }
-      $("#station-name").html(
-        `${data.departures[0]["stop_area"]["name"]}`
-      );
+      $("#station-name").html(`${data.departures[0]["stop_area"]["name"]}`);
+
+      $("#result").empty();
       const totalDepartures = data.departures.slice(0, data.departures.length);
-      const showDepartures = totalDepartures.map((station) => {
-        return station.destination;
+
+      totalDepartures.forEach((station) => {
+        $("#result").append(`
+            <p class="result-station">${station.destination}</p>
+            <p class="result-time-display">${station.display}</p>
+            <p class="result-time">${station.expected.slice(11)}</p>
+            <p class="result-transport-mode">${
+              station.line["transport_mode"]
+            }</p>
+            <p class="result-transport-line">${
+              station.line["group_of_lines"]
+                ? station.line["group_of_lines"]
+                : ""
+            }</p>
+    `);
       });
-      $('#search-result').html(`${showDepartures}`)
     } catch (error) {
       console.log(error);
     }
