@@ -51,9 +51,10 @@ $(() => {
       $("#station-name").html(`${data.departures[0]["stop_area"]["name"]}`);
 
       $("#result").empty();
-      const totalDepartures = data.departures.slice(0, data.departures.length);
 
-      totalDepartures.forEach((station) => {
+      const allDepartures = data.departures;
+
+      allDepartures.forEach((station) => {
         $("#result").append(`
           <div class="result-card">
             <div>
