@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100dvh;
+}
+
+body {
+  width: 60%;
+  font-family: "Lato", serif;
+  text-align: center;
+  margin: auto;
+}
+
+#randomButton {
+  background: #007bff;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#randomButton:hover {
+  background: #0056b3;
+  transform: scale(1.02);
+}
+
+#randomButton:active {
+  background: #003f80;
+  transform: scale(1);
+}
+
+#station-name {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 2rem 0;
+}
+
+#result {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.result-card {
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.result-station {
+  font-size: 24px;
+  font-weight: 700;
+  color: black;
+}
+
+.result-time-display {
+  font-size: 18px;
+  font-weight: 600;
+  color: #666;
+}
+
+.result-time {
+  font-size: 18px;
+  font-weight: bold;
+  color: dodgerblue;
+}
+
+.result-transport_container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 6px;
+}
+
+.result-transport-mode {
+  width: auto;
+  height: 24px;
+  color: #555;
+}
+
+.result-transport-designation {
+  background-color: black;
+  color: white;
+  padding: 3px 8px;
+  width: fit-content;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.random-button-box {
+  display: flex;
+}
