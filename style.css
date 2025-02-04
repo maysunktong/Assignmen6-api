@@ -2,16 +2,44 @@
   box-sizing: border-box;
 }
 
-:root {
-}
-
 html {
   min-height: 100dvh;
 }
 
 body {
+  font-family: "Lato", serif;
   text-align: center;
   margin: auto;
+}
+
+#randomButton {
+  background: #007bff;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#randomButton:hover {
+  background: #0056b3;
+  transform: scale(1.02);
+}
+
+#randomButton:active {
+  background: #003f80;
+  transform: scale(1);
+}
+
+#station-name {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 2rem 0;
 }
 
 #result {
@@ -21,7 +49,6 @@ body {
 }
 
 .result-card {
-  font-family: Arial, sans-serif;
   width: 60%;
   margin: 0 auto;
   padding: 24px;
@@ -33,26 +60,45 @@ body {
 }
 
 .result-station {
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
+  font-size: 24px;
+  font-weight: 700;
+  color: black;
 }
 
 .result-time-display {
   font-size: 18px;
+  font-weight: 600;
   color: #666;
-  margin-bottom: 5px;
 }
 
 .result-time {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
-  color: #007bff;
-  margin-bottom: 5px;
+  color: dodgerblue;
+}
+
+.result-transport_container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 6px;
 }
 
 .result-transport-mode {
-  font-size: 14px;
+  width: auto;
+  height: 24px;
   color: #555;
-  margin-bottom: 5px;
+}
+
+.result-transport-designation {
+  background-color: black;
+  color: white;
+  padding: 3px 8px;
+  width: fit-content;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.random-button-box {
+  display: flex;
 }

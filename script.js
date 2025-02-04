@@ -3,6 +3,29 @@ $(() => {
   const API_DEVIATIONS =
     "https://deviations.integration.sl.se/v1/messages?future=true";
 
+  const transportIcons = {
+    bus: "./assets/bus.png",
+    train: "./assets/pedel.png",
+    metro: "./assets/metro.png",
+    tram: "./assets/tram.png",
+    ship: "./assets/ship.png",
+  };
+
+
+  function getLineColor(line) {
+    if (!line) return "";
+    if (line.toLowerCase().includes("röda")) return "red";
+    if (line.toLowerCase().includes("gröna")) return "green";
+    if (line.toLowerCase().includes("pendeltåg")) return "rgb(246, 38, 239)";
+    if (line.toLowerCase().includes("spårväg")) return "rgb(181, 181, 181)";
+    if (line.toLowerCase().includes("nockeby")) return "rgb(38, 96, 166)";
+    if (line.toLowerCase().includes("lidingö")) return "rgb(153, 98, 49)";
+    if (line.toLowerCase().includes("tvärbanan")) return "rgb(255, 149, 0)";
+    if (line.toLowerCase().includes("saltsjö")) return "rgb(0, 195, 255)";
+    if (line.toLowerCase().includes("roslags")) return "rgb(120, 63, 199)";
+    return;
+  }
+
   const getRandomStation = async () => {
     try {
       let hasDepartures = false;
@@ -34,19 +57,26 @@ $(() => {
         $("#result").append(`
           <div class="result-card">
             <div>
-            <p class="result-station">${station.destination}</p>
-            <p class="result-time">${station.expected.slice(11)}</p>
-            <p class="result-transport-mode">${
-              station.line["transport_mode"]
-            }</p>
-            <p class="result-transport-line">${
-              station.line["group_of_lines"]
-                ? station.line["group_of_lines"]
-                : ""
-            }</p>
+            <p class="result-station">${station["stop_area"]["name"]} → ${
+          station.destination
+        }</p>
+            <p class="result-time">Departure: ${station.expected.slice(
+              11,
+              16
+            )}</p>
+            <div class="result-transport_container">
+             <img class="result-transport-mode" src="${
+               transportIcons[station.line["transport_mode"].toLowerCase()]
+             }" alt="${station.line["transport_mode"]}" />
+            <p class="result-transport-designation" style="background-color: ${getLineColor(station.line["group_of_lines"])};">
+            ${station.line["designation"]}
+        </p>
+            </div>
           </div>
           <div>
-            <p class="result-time-display">${station.display}</p>
+            <p class="result-time-display" style="color: ${
+              station.display.toLowerCase() === "nu" ? "red" : ""
+            };">${station.display}</p>
           </div>
           </div>`);
       });
