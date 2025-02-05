@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  width: 60%;
+  max-width: 80%;
   font-family: "Lato", serif;
   text-align: center;
   margin: auto;
@@ -52,7 +52,7 @@ body {
 .result-card {
   width: 100%;
   margin: 0 auto;
-  padding: 24px;
+  padding: 18px;
   background-color: #f5f5f5;
   border-radius: 10px;
   display: flex;
@@ -61,7 +61,7 @@ body {
 }
 
 .result-station {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   color: black;
 }
