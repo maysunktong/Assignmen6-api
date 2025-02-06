@@ -3,9 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,12 +12,15 @@
     />
     <script src="scripts/departures.js"></script>
     <link rel="stylesheet" href="styles/style.css" />
-    <title>api</title>
+    <title>Departures</title>
   </head>
   <body>
+    <header>
+      <h1>Header</h1>
+      <%- include('../partials/navigation') %>
+    </header>
     <button type="button" id="randomButton">Random a station</button>
     <div id="station-name">Click a button to randomize a station</div>
-
     <div id="result">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis doloribus
       vitae, accusantium porro fugit voluptatem obcaecati impedit ut ex aliquid
