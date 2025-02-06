@@ -85,6 +85,10 @@ main {
   background-color: #f5ebe0;
 }
 
+.menu-item.favorite {
+  background-color: #ff861c;
+}
+
 .menu-item:hover {
   background-color: #f4a261;
   color: white;
