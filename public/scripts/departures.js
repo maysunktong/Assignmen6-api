@@ -1,7 +1,5 @@
 $(() => {
   const API_SITES = "https://transport.integration.sl.se/v1/sites";
-  const API_DEVIATIONS =
-    "https://deviations.integration.sl.se/v1/messages?future=true";
 
   const transportIcons = {
     bus: "./assets/bus.png",
