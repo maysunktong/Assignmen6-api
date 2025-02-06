@@ -5,7 +5,8 @@ const departuresRoute = express.Router();
 
 departuresRoute.get("/", (req, res) => {
   res.render("pages/departures", {
-    title: "Departures",
+    title: "Trafikatt",
+    subtitle: "Departures"
   });
 });
 

@@ -10,27 +10,55 @@
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <script src="scripts/departures.js"></script>
     <link rel="stylesheet" href="styles/style.css" />
     <title>Departures</title>
   </head>
   <body>
     <%- include('../partials/header') %>
-    <button type="button" id="randomButton">Random a station</button>
-    <div id="station-name">Click a button to randomize a station</div>
-    <div id="result">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis doloribus
-      vitae, accusantium porro fugit voluptatem obcaecati impedit ut ex aliquid
-      animi dignissimos aliquam sed, neque nostrum eligendi cupiditate nam cum
-      laudantium a nesciunt harum. Laborum architecto aut reiciendis vitae
-      omnis, sapiente sint soluta. Fugiat sapiente voluptatibus nemo dolores
-      quis veritatis, obcaecati illo accusantium quidem culpa eveniet deleniti
-      eaque corrupti est iste eligendi impedit libero debitis cumque! Hic totam
-      a neque, cupiditate perferendis sunt nam suscipit omnis tempore eligendi
-      sed et modi fugit quam ipsam inventore vero molestiae repudiandae amet
-      quas tenetur repellendus, esse natus! Eveniet hic reiciendis neque labore
-      deserunt.
-    </div>
+    <main>
+      <button type="button" id="randomButton">Random a station</button>
+      <div id="station-name">Data is displayed here</div>
+      <div id="result">
+        <span>
+          Imagine a world where you can navigate the urban jungle with the
+          agility and curiosity of a cat, exploring new destinations with ease
+          and spontaneity. Welcome to Trafikatt, the innovative transportation
+          platform that lets you travel freely and effortlessly, just like a
+          feline on the prowl. With Trafikatt, your journey is no longer bound
+          by rigid schedules or predictable routes—instead, it's an adventure
+          waiting to unfold.
+        </span>
+        <span>
+          <h2>What is Trafikatt?</h2>
+          Trafikatt is a cutting-edge transportation app designed to make your
+          travel experience seamless, fun, and unpredictable. Whether you're a
+          daily commuter or an adventurous explorer, Trafikatt empowers you to
+          embrace the unexpected. The app integrates real-time data from SL
+          Trafiks API, ensuring you have access to accurate and up-to-date
+          information about public transportation in your area. How Does
+          Trafikatt Work? At the heart of Trafikatt is its unique randomization
+          feature.
+        </span>
+        <span>
+          <h2>Here's how it works:</h2>
+          <ul>
+            <li>
+              Randomize Your Journey: Tap the button, and Trafikatt will select
+              a random starting station and destination for you.
+            </li>
+            <li>
+              Real-Time Data: The app pulls live data from SL Trafiks API,
+              providing you with the fastest and most efficient routes.
+            </li>
+            <li>
+              Explore Freely: Whether it's a hidden gem in your city or a
+              bustling hub you've never visited, Trafikatt encourages you to
+              step out of your comfort zone and discover new places.
+            </li>
+          </ul>
+        </span>
+      </div>
+    </main>
 
     <script>
       $(() => {
@@ -95,7 +123,7 @@
             allDepartures.forEach((station) => {
               $("#result").append(`
           <div class="result-card">
-            <div>
+            <div class="result-card-left">
             <p class="result-station">${station["stop_area"]["name"]} → ${
                 station.destination
               }</p>

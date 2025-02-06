@@ -1,14 +1,16 @@
 <header>
   <div class="header-inner">
     <div class="logo-wrapper">
-      <img src="assets/icons/logo.png" alt="cat-log" width="50" />
-      <h1 class="title"><%= title %></h1>
+      <img src="assets/icons/logo.png" alt="cat-log" height="100" />
+      <div class="title-wrapper">
+        <h1 class="title"><%= title %></h1>
+        <h2 class="subtitle"><%= subtitle %></h2>
+      </div>
     </div>
     <nav class="nav">
-      <a href="/">Home</a>
-      <a href="/departures">Departures</a>
-      <a href="/deviations">Deviations</a>
-      <a href="/favorites">Favorites</a>
+      <a href="/departures" class="menu-item">Departures</a>
+      <a href="/deviations" class="menu-item">Deviations</a>
+      <a href="/favorites" class="menu-item">Favorites</a>
     </nav>
   </div>
 </header>

@@ -10,24 +10,51 @@ html {
 body {
   width: 100%;
   font-family: "Lato", serif;
-  text-align: center;
-  margin: auto;
 }
 
 /* header */
 header {
-  background-color: green;
-  padding: 0 2rem;
+  width: 100%;
+  background-image: url("../assets/bg/bg.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: -100px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  min-height: 400px;
+}
+
+span {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  padding-bottom: 2rem;
+  color: #969696;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .header-inner {
-  width: 60%;
+  width: 80%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .title {
   width: 100px;
+  font-size: 3rem;
 }
 
 .logo-wrapper {
@@ -43,28 +70,35 @@ header {
   gap: 20px;
   padding: 10px 20px;
   border-radius: 10px;
+  flex-wrap: wrap;
 }
 
-.nav a {
+.menu-item {
   text-decoration: none;
   color: #333;
-  font-size: 16px;
-  padding: 10px 15px;
-  border-radius: 5px;
-  transition: background 0.3s ease;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #f5ebe0;
 }
 
-.nav a:hover {
-  background: #e0e0e0;
+.menu-item:hover {
+  background-color: #f4a261;
+  color: white;
+}
+
+.menu-item.active {
+  background-color: green;
 }
 
 #randomButton {
-  background: #007bff;
+  background: #219ebc;
   color: white;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: bold;
   border: none;
-  padding: 12px 20px;
+  padding: 20px;
   border-radius: 8px;
   cursor: pointer;
   text-transform: uppercase;
@@ -72,13 +106,8 @@ header {
 }
 
 #randomButton:hover {
-  background: #0056b3;
+  background: #264653;
   transform: scale(1.02);
-}
-
-#randomButton:active {
-  background: #003f80;
-  transform: scale(1);
 }
 
 #station-name {
@@ -86,9 +115,12 @@ header {
   text-transform: uppercase;
   font-weight: 600;
   padding: 2rem 0;
+  color: #264653;
+  font-weight: 800;
 }
 
 #result {
+  width: 50%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -103,6 +135,12 @@ header {
   display: flex;
   justify-content: space-between;
   text-align: left;
+}
+
+.result-card-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .result-station {
@@ -147,4 +185,31 @@ header {
 
 .random-button-box {
   display: flex;
+}
+
+@media (max-width: 800px) {
+  #result {
+    width: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+  .header-inner {
+    width: 90%;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  .nav {
+    gap: 10px;
+  }
+  #result {
+    width: 90%;
+  }
+  #station-name {
+    font-size: 1.5rem;
+  }
 }
