@@ -13,6 +13,13 @@ body {
   margin: auto;
 }
 
+/* navbar */
+.nav-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
 #randomButton {
   background: #007bff;
   color: white;
