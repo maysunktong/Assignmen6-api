@@ -17,26 +17,50 @@
   <body>
     <%- include('../partials/header') %>
     <main>
+      <h1>Trafikläget just nu</h1>
       <div id="result">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni atque
-        iusto porro minima ad animi voluptatem saepe consectetur molestias non
-        architecto illum totam, esse qui blanditiis error, iure neque
-        consequatur aliquid debitis ratione sapiente aperiam distinctio
-        molestiae. Libero, ad ducimus soluta eius praesentium, accusantium,
-        quidem deserunt nesciunt sed eaque quaerat.
       </div>
     </main>
     <script>
       $(() => {
-        const API_DEVIATIONS = "https://transport.integration.sl.se/v1/sites";
-       const getDeviationsData = async() => {
-        try{
+        const API_DEVIATIONS =
+          "https://deviations.integration.sl.se/v1/messages?future=false&transport_mode=METRO";
 
+        const getDeviationsData = async () => {
+          try {
+            let response = await fetch(API_DEVIATIONS);
+            let data = await response.json();
 
-        } catch(error){
-          console.log("error messages", error)
-        }
-       }
+            console.log("deviations", data);
+
+            $("#result").append(
+              `<p class="total-disturbances">Disturbances: ${data.length}</p>`
+            );
+
+            data.forEach((item) => {
+              $("#result").append(`
+              <div class="result-card-deviation">
+               <div class="result-transport_container">
+                 <img class="result-transport-mode" src="/assets/metro.png" alt="metro" />
+                <p>${item.scope.lines[0].group_of_lines} ${
+                item.scope.lines[0].designation
+              }</p>
+              </div>
+              <hr>
+              <h3>${item.message_variants[0].header}</h3>
+               <p class="result-time-deviations">Duration from: ${item.publish.from.slice(
+                 11,
+                 16
+               )} to ${item.publish.upto.slice(11, 16)}</p>
+              <p>${item.message_variants[0].details}</p>
+              <div>
+              `);
+            });
+          } catch (error) {
+            console.log("error messages", error);
+          }
+        };
+        getDeviationsData();
       });
     </script>
   </body>
