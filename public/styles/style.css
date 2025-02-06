@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 html {
@@ -7,20 +8,41 @@ html {
 }
 
 body {
-  max-width: 80%;
+  width: 100%;
   font-family: "Lato", serif;
   text-align: center;
   margin: auto;
+}
+
+/* header */
+header {
+  background-color: green;
+  padding: 0 2rem;
+}
+
+.header-inner {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  width: 100px;
+}
+
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 /* navbar */
 .nav {
   display: flex;
   gap: 20px;
-  background: white;
   padding: 10px 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .nav a {
