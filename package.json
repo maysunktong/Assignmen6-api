@@ -1,8 +1,8 @@
 {
-  "name": "sltrafik",
+  "name": "trafikatt",
   "version": "1.0.0",
   "type": "module",
-  "description": "Trafik app",
+  "description": "Transportation app",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

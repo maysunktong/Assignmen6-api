@@ -3,7 +3,7 @@ import * as path from "path";
 import deviationsRoute from "./routes/deviations.js";
 import favoritesRoute from "./routes/favorites.js";
 
-const PORT = 3010;
+const PORT = process.env.PORT || 3010;
 const app = express();
 const __dirname = path.resolve();
 
