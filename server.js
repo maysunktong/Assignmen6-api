@@ -1,6 +1,5 @@
 import express from "express";
 import * as path from "path";
-import departuresRoute from "./routes/departures.js";
 import deviationsRoute from "./routes/deviations.js";
 import favoritesRoute from "./routes/favorites.js";
 
@@ -18,7 +17,6 @@ app.get("/", (req, res) => {
   });
 });
 
-app.use("/departures", departuresRoute);
 app.use("/deviations", deviationsRoute);
 app.use("/favorites", favoritesRoute);
 
