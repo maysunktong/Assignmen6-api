@@ -30,7 +30,6 @@ header {
   background-image: url("../assets/bg/bg.svg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position-y: -200px;
   margin: auto;
   display: flex;
   justify-content: center;
