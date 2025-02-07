@@ -19,6 +19,11 @@ h1 {
   padding-bottom: 1rem;
 }
 
+button {
+  border: none;
+  cursor: pointer;
+}
+
 /* header */
 header {
   width: 100%;
@@ -178,7 +183,7 @@ main {
 
 .result-card-right {
   display: flex;
-  align-items: center;
+  align-items: end;
   flex-direction: column;
   justify-content: space-between;
 }
