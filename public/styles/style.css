@@ -18,11 +18,11 @@ header {
   background-image: url("../assets/bg/bg.svg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position-y: -50px;
+  background-position-y: -150px;
   margin: auto;
   display: flex;
   justify-content: center;
-  height: 250px;
+  height: 350px;
 }
 
 span {
