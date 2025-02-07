@@ -1,15 +1,18 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 
 html {
-  min-height: 100dvh;
+  height: 100%;
 }
 
 body {
   width: 100%;
   font-family: "Lato", serif;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
@@ -41,6 +44,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  flex: 1;
 }
 
 .title-wrapper {
@@ -129,6 +133,7 @@ main {
 #result,
 #favorites {
   padding-top: 1rem;
+  padding-bottom: 4rem;
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -144,6 +149,7 @@ main {
   display: flex;
   justify-content: space-between;
   text-align: left;
+  gap: 10px;
 }
 
 #favorites .result-card {
@@ -172,6 +178,7 @@ main {
 
 .result-card-right {
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -223,9 +230,23 @@ main {
   display: flex;
 }
 
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(37, 212, 98);
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
 @media (max-width: 900px) {
-  #result {
+  #result, #favorites {
     width: 80%;
+  }
+  #station-name {
+    font-size: 1.5rem;
   }
 }
 
@@ -242,10 +263,10 @@ main {
   .nav {
     gap: 10px;
   }
-  #result {
+  #result, #favorites {
     width: 90%;
   }
   #station-name {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }
