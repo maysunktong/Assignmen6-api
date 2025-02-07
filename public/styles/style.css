@@ -122,7 +122,8 @@ main {
   text-align: center;
 }
 
-#result {
+#result,
+#favorites {
   padding-top: 1rem;
   width: 50%;
   display: flex;
@@ -139,6 +140,10 @@ main {
   display: flex;
   justify-content: space-between;
   text-align: left;
+}
+
+#favorites .result-card {
+  border: rgb(101, 250, 153) 2px solid;
 }
 
 .result-card-deviation {
@@ -159,6 +164,12 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.result-card-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .result-station,
