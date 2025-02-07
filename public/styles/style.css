@@ -12,6 +12,10 @@ body {
   font-family: "Lato", serif;
 }
 
+h1 {
+  padding-bottom: 1rem;
+}
+
 /* header */
 header {
   width: 100%;
