@@ -7,13 +7,16 @@ const PORT = process.env.PORT || 3010;
 const app = express();
 const __dirname = path.resolve();
 
+// join __dirname with views
+app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
-app.use(express.static(path.join(__dirname, "public")));
+
+app.use(express.static("public"));
 
 app.get("/", (req, res) => {
   res.render("pages/index", {
     title: "Trafikatt",
-    subtitle: "Res överallt som en katt"
+    subtitle: "Res överallt som en katt",
   });
 });
 
