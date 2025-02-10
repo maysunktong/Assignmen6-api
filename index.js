@@ -14,7 +14,7 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
-  res.render("pages/index", {
+  res.render("pages/home", {
     title: "Trafikatt",
     subtitle: "Res överallt som en katt",
   });
