@@ -2,8 +2,11 @@ import express from "express";
 import * as path from "path";
 import deviationsRoute from "./routes/deviations.js";
 import favoritesRoute from "./routes/favorites.js";
+import * as dotenv from "dotenv";
 
-const PORT = process.env.PORT || 3010;
+dotenv.config();
+
+const PORT = process.env.PORT;
 const app = express();
 const __dirname = path.resolve();
 
